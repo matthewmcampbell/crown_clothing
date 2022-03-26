@@ -18,15 +18,14 @@ const SignInForm = () => {
     }
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (email && password){
             try {
-                const response = await signInAuthUserWithEmailAndPassword(email, password);
+                const { user } = await signInAuthUserWithEmailAndPassword(email, password);
                 resetFormFields();
             } catch (error) {
                 if(error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
