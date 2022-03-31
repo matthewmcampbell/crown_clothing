@@ -14,6 +14,9 @@ export const FormContainer = styled.form`
     padding: 20px;
     border-style: groove;
     border-radius: 20px;
+    @media screen and (max-width: 800px){
+        min-width: 80vw;
+    }
 `
 
 export const PaymentButton = styled(Button)`

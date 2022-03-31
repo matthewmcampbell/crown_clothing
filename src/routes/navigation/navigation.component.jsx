@@ -48,7 +48,7 @@ const Navigation = () => {
             </NavLinks>
             {isCartOpen && <CartDropdown/>}
         </NavigationContainer>
-        <Outlet onClick={closeCartDropdown}/>
+        <Outlet/>
       </Fragment>
     )
 }
