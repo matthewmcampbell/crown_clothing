@@ -13,25 +13,28 @@ import { ReactComponent as CrwnLogo } from "../../assets/logo.svg"
 import {NavigationContainer, NavLink, NavLinks, LogoContainer} from "./navigation.styles"
 import { selectCurrentUser } from '../../store/user/user.selector';
 import { signOutStart } from '../../store/user/user.action';
+import DisplayName from '../../components/display-name/display-name.component';
 
 const Navigation = () => {
     const dispatch = useDispatch();
     const currentUser = useSelector(selectCurrentUser);
     const isCartOpen = useSelector(selectIsCartOpen);
-    
     const closeCartDropdown = () => dispatch(setIsCartOpen(false));
 
     const handleSignOutUser = () => {
         dispatch(signOutStart());
         closeCartDropdown();
     }
+    console.log(currentUser);
     return(
       <Fragment>
         <NavigationContainer>
             <LogoContainer to="/" onClick={closeCartDropdown}>
                 <CrwnLogo className="logo"/>
             </LogoContainer>
+            
             <NavLinks>
+            { currentUser ? <DisplayName name={currentUser.displayName}/> : null}    
                 <NavLink to="/shop" onClick={closeCartDropdown}>
                     SHOP
                 </NavLink>

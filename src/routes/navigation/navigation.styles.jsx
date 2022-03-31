@@ -77,6 +77,7 @@ export const NavLinks = styled.div`
   
   @media screen and (max-width: 800px) {
       width: 80%;
+      font-size: 12px;
   }
 `
 
