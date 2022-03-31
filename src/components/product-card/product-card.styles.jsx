@@ -6,8 +6,10 @@ export const ProductButton = styled(InvertedButton)`
     width: 80%;
     opacity: 0.7;
     position: absolute;
-    top: 240px;
-    display: none;
+    top: 70%;
+    height: 10%;
+    font-size: 110%;
+    /* display: none; */
 `
 
 export const ProductCardContainer = styled.div`
